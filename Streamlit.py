@@ -43,19 +43,19 @@ chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"]) # Dat
 
 st.bar_chart(chart_data)  # 바 차트 출력
 
-# 이미지 출력
-st.write('# 4. 이미지 표시하기')   # 텍스트 출력
+# # 이미지 출력
+# st.write('# 4. 이미지 표시하기')   # 텍스트 출력
 
-# 이미지 파일 경로
-image_path = 'C:/StreamlitImages/chi.png'
+# # 이미지 파일 경로
+# image_path = 'C:/StreamlitImages/chi.png'
 
-# 파일 존재 여부 확인
-if os.path.exists(image_path):
-    st.write(f"이미지 파일 경로: {image_path}")
-    img = Image.open(image_path)     # 이미지 파일 열기
-    st.image(img, width=300)         # 이미지 출력
-else:
-    st.write(f"이미지 파일을 찾을 수 없습니다. 경로를 확인해주세요: {image_path}")
+# # 파일 존재 여부 확인
+# if os.path.exists(image_path):
+#     st.write(f"이미지 파일 경로: {image_path}")
+#     img = Image.open(image_path)     # 이미지 파일 열기
+#     st.image(img, width=300)         # 이미지 출력
+# else:
+#     st.write(f"이미지 파일을 찾을 수 없습니다. 경로를 확인해주세요: {image_path}")
 
 
 # 사이드바
