@@ -51,7 +51,8 @@ image_path = 'C:/StreamlitImages/chi.png'
 
 # 파일 존재 여부 확인
 if os.path.exists(image_path):
+    st.write(f"이미지 파일 경로: {image_path}")
     img = Image.open(image_path)     # 이미지 파일 열기
     st.image(img, width=300)         # 이미지 출력
 else:
-    st.write("이미지 파일을 찾을 수 없습니다. 경로를 확인해주세요.")
+    st.write(f"이미지 파일을 찾을 수 없습니다. 경로를 확인해주세요: {image_path}")
