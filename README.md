@@ -6,7 +6,7 @@
 
 ## 연락처
 
-이메일: [rlaehdrb2485@naver.com](rlaehdrb2485@naver.com) \n
+이메일: [rlaehdrb2485@naver.com](rlaehdrb2485@naver.com)
 전화번호 : 010 - 9268 - 2485
 
 ## 포트폴리오 웹사이트
