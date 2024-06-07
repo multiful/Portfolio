@@ -129,3 +129,17 @@ if button:
     st.write('버튼이 클릭되었습니다.(일반 텍스트: st.write()')
     st.success('버튼이 클릭되었습니다.(메시지: st.success())')  # 성공 메시지 출력
     st.balloons() # 풍선 애니메이션 출력
+
+# 캐싱
+st.header('🤖 캐싱 적용')
+
+import time
+
+@st.cache_data
+def long_running_function(param1):
+    time.sleep(5)
+    return param1*param1
+
+start = time.time()
+num_1 = st.number_input('입력한 숫자의 제곱을 계산합니다.') # 숫자 입력은 입력된 값을 반환
+st.write(f'{num_1}의 제곱은 {long_running_function(num_1)} 입니다. 계산시간은 {time.time()-start:.2f}초 소요')
