@@ -47,7 +47,14 @@ st.bar_chart(chart_data)  # 바 차트 출력
 st.write('# 4. 이미지 표시하기')   # 텍스트 출력
 
 # 이미지 파일 경로
-image_path = 'C:/Users/rlaeh/OneDrive/바탕 화면/Python/StreamlitPython/chi.png'
+# 방법 1: 백슬래시 두 개 사용
+image_path = 'C:\\Users\\rlaeh\\OneDrive\\바탕 화면\\Python\\StreamlitPython\\chi.png'
+
+# 방법 2: 슬래시 사용
+# image_path = 'C:/Users/rlaeh/OneDrive/바탕 화면/Python/StreamlitPython/chi.png'
+
+# 방법 3: raw 문자열 사용
+# image_path = r'C:\Users\rlaeh\OneDrive\바탕 화면\Python\StreamlitPython\chi.png'
 
 # 파일 존재 여부 확인
 if os.path.exists(image_path):
