@@ -5,7 +5,7 @@ from PIL import Image     # 이미지 처리를 위한 PIL 라이브러리 임�
 import os  # 파일 경로 확인을 위한 os 라이브러리 임포트
 
 # 타이틀 텍스트 출력
-st.title('첫번째 웹 어플 만들기👋')
+st.title('첫번째 웹 어플 만들기')
 
 # 텍스트 출력
 st.write('# 1. Markdown 텍스트 작성하기')
@@ -43,19 +43,21 @@ chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"]) # Dat
 
 st.bar_chart(chart_data)  # 바 차트 출력
 
-# # 이미지 출력
-# st.write('# 4. 이미지 표시하기')   # 텍스트 출력
+# 이미지 출력
+st.write('# 4. 이미지 표시하기')   # 텍스트 출력
 
-# # 이미지 파일 경로
-# image_path = 'C:/StreamlitImages/chi.png'
+# 이미지 파일 경로
+image_path = 'C:/StreamlitImages/chi.png'
 
-# # 파일 존재 여부 확인
-# if os.path.exists(image_path):
-#     st.write(f"이미지 파일 경로: {image_path}")
-#     img = Image.open(image_path)     # 이미지 파일 열기
-#     st.image(img, width=300)         # 이미지 출력
-# else:
-#     st.write(f"이미지 파일을 찾을 수 없습니다. 경로를 확인해주세요: {image_path}")
+# 파일 존재 여부 확인
+if os.path.exists(image_path):
+    img = Image.open(image_path)     # 이미지 파일 열기
+    st.image(img, width=300)         # 이미지 출력
+else:
+    st.write(f"이미지 파일을 찾을 수 없습니다. 경로를 확인해주세요: {image_path}")
+        # 이미지 출력
+
+import streamlit as st
 
 # 텍스트
 st.header('🤖 텍스트')
@@ -67,7 +69,6 @@ st.header('이것은 헤더입니다. : st.header()')
 st.subheader('이것은 서브헤더입니다. : st.subheader()')
 st.text('## 이것은 텍스트입니다. : st.text()')
 st.markdown('## 이것은 마크다운입니다. : st.markdown()')
-
 
 # 사이드바
 st.header('🤖 사이드바')
