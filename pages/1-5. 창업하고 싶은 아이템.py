@@ -29,7 +29,7 @@ st.markdown('''
   - 사용자가 원하는 콘텐츠를 빠르게 찾을 수 있어 만족도 증가
   - 콘텐츠 제공자의 수익 증대
 ''')
-image_path1 = 'Images/1.png'
+image_path1 = 'images/1.png'
 if os.path.exists(image_path1):
     img1 = Image.open(image_path1)  # 이미지 파일 열기
     st.image(img1, width=300)  # 이미지 출력
@@ -48,7 +48,7 @@ st.markdown('''
   - 마케팅 전략 수립에 유용
   - 커뮤니티 관리 및 발전에 기여
 ''')
-image_path2 = 'Images/2.png'
+image_path2 = 'images/2.png'
 if os.path.exists(image_path2):
     img2 = Image.open(image_path2)  # 이미지 파일 열기
     st.image(img2, width=300)  # 이미지 출력
@@ -68,7 +68,7 @@ st.markdown('''
   - 운행 시간 절약
   - 긴급 상황 대처 능력 향상
 ''')
-image_path3 = 'Images/3.png'
+image_path3 = 'images/3.png'
 if os.path.exists(image_path3):
     img3 = Image.open(image_path3)  # 이미지 파일 열기
     st.image(img3, width=300)  # 이미지 출력
@@ -88,7 +88,7 @@ st.markdown('''
   - 효율적인 마케팅 전략 수립
   - ROI(투자 대비 수익) 극대화
 ''')
-image_path4 = 'Images/4.png'
+image_path4 = 'images/4.png'
 if os.path.exists(image_path4):
     img4 = Image.open(image_path4)  # 이미지 파일 열기
     st.image(img4, width=300)  # 이미지 출력
