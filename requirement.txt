@@ -3,5 +3,3 @@ pandas
 matplotlib
 Pillow
 plotly
-os
-altair
