@@ -1,5 +1,6 @@
-plotly
 streamlit
 pandas
+matplotlib.pyplot
 matplotlib
 Pillow
+plotly
