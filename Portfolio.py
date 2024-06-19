@@ -21,16 +21,13 @@ st.markdown('''저의 웹페이지에 오신 걸 환영합니다!
 # 사이드바 개인 정보 및 설정
 st.sidebar.header('🎯 사이드바')
 st.sidebar.write('## 개인 정보')
-st.sidebar.write('이름: ---')
-st.sidebar.write('이메일: -@naver.com')
-
-st.sidebar.write('## 설정')
-st.sidebar.radio('테마 선택', ['Light', 'Dark'])
+st.sidebar.write('이름: 김동규')
+st.sidebar.write('이메일: rlaehdrb2485@naver.com')
 
 # Contact 섹션 추가
 st.header('🎯 Contact')
 # 이미지 파일 경로
-image_path = 'C:/StreamlitImage/ID_photo.png'
+image_path = "C:/Users/rlaeh/OneDrive/바탕 화면/Python/StreamlitPython/Images/ID_photo.png"
 # 파일 존재 여부 확인
 if os.path.exists(image_path):
     img = Image.open(image_path)  # 이미지 파일 열기
@@ -38,11 +35,12 @@ if os.path.exists(image_path):
 else:
     st.write(f"이미지 파일을 찾을 수 없습니다.")
 
+
 # Markdown 문법으로 작성된 문장 출력
 st.markdown(
     '''
-    - [GitHub](https://github.com/-)
-    - [Blog](https://blog.naver.com/-)
+    - [GitHub](https://github.com/multiful)
+    - [Blog](https://blog.naver.com/rlaehdrb2485)
     '''
 )
 
