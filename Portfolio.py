@@ -29,7 +29,7 @@ st.sidebar.write('이메일: rlaehdrb2485@naver.com')
 # Contact 섹션 추가
 st.header('🎯 Contact')
 # 이미지 파일 경로
-image_path = "C:/Users/rlaeh/OneDrive/바탕 화면/Python/StreamlitPython/Images/ID_photo.png"
+image_path = "Images/ID_photo.png"
 # 파일 존재 여부 확인
 if os.path.exists(image_path):
     img = Image.open(image_path)  # 이미지 파일 열기
