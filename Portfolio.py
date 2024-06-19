@@ -1,8 +1,10 @@
+import sys
 import streamlit as st  # streamlit 라이브러리 임포트
 import pandas as pd  # pandas 라이브러리 임포트
 import numpy as np   # numpy 라이브러리 임포트
 from PIL import Image  # 이미지 처리를 위한 PIL 라이브러리 임포트
 import os  # 파일 경로 확인을 위한 os 라이브러리 임포트
+
 
 st.set_page_config(
     page_title="Portfolio",

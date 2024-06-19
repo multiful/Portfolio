@@ -1,8 +1,6 @@
 import streamlit as st
-import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-
+import plotly.express as px
 
 st.set_page_config(
     page_title="카카오톡 소개",
@@ -41,7 +39,6 @@ st.write('''카카오톡은 개인 간의 소통을 넘어서, 사회 전반에 
 공공기관과의 협력을 통해 긴급 재난 문자 발송, 소상공인 지원 프로그램, 비즈니스 플랫폼 제공 등 
 사회적 가치 창출에 기여하고 있습니다.''')
 
-
 st.header("🎯6. 카카오톡 MAU 그래프")
 st.sidebar.header("그래프 데모")
 st.write(
@@ -57,15 +54,10 @@ mau_data = {
 # 데이터프레임 생성
 mau_df = pd.DataFrame(mau_data)
 
-# 그래프 생성
-fig, ax = plt.subplots()
-ax.plot(mau_df['연도/분기'], mau_df['MAU'], marker='o', linestyle='-', color='b')
-
-ax.set_title('카카오톡 월간 활성 사용자 (MAU)', fontsize=16)
-ax.set_xlabel('연도/분기', fontsize=12)
-ax.set_ylabel('MAU (천명)', fontsize=12)
-plt.xticks(rotation=45)
-plt.grid(True)
+# Plotly를 사용한 그래프 생성
+fig = px.line(mau_df, x='연도/분기', y='MAU', title='카카오톡 월간 활성 사용자 (MAU)')
+fig.update_traces(mode='markers+lines')
+fig.update_layout(xaxis_title='연도/분기', yaxis_title='MAU (천명)')
 
 # 그래프 출력
-st.pyplot(fig)
+st.plotly_chart(fig)

@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.set_page_config(
     page_title="카카오페이 소개",
@@ -54,15 +54,10 @@ mau_data = {
 # 데이터프레임 생성
 mau_df = pd.DataFrame(mau_data)
 
-# 그래프 생성
-fig, ax = plt.subplots()
-ax.plot(mau_df['연도/분기'], mau_df['MAU'], marker='o', linestyle='-', color='g')
-
-ax.set_title('카카오페이 월간 활성 사용자 (MAU)', fontsize=16)
-ax.set_xlabel('연도/분기', fontsize=12)
-ax.set_ylabel('MAU (천명)', fontsize=12)
-plt.xticks(rotation=45)
-plt.grid(True)
+# Plotly를 사용한 그래프 생성
+fig = px.line(mau_df, x='연도/분기', y='MAU', title='카카오페이 월간 활성 사용자 (MAU)', markers=True)
+fig.update_layout(xaxis_title='연도/분기', yaxis_title='MAU (천명)')
+fig.update_traces(line=dict(color='green'))
 
 # 그래프 출력
-st.pyplot(fig)
+st.plotly_chart(fig)

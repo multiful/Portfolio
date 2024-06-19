@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
+import plotly.express as px
 
 st.set_page_config(
     page_title="카카오 기업 소개",
@@ -40,10 +39,6 @@ st.header('🎯4. 재무 데이터')
 st.write('''카카오는 지속적인 성장을 통해 재무 상태를 개선하고 있습니다. 
 다음은 2020년부터 2023년까지의 주요 재무 지표입니다.''')
 
-# 기본 폰트 설정
-plt.rcParams['font.family'] = 'gulim'  # 굴림 폰트 사용
-plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
-
 data = {
     '연도': ['2020', '2021', '2022', '2023'],
     '매출액': [9042, 11649, 18058, 26940],
@@ -69,36 +64,15 @@ financial_data['당기순이익 성장률 (%)'] = financial_data['당기순이�
 st.table(financial_data)
 
 # 여러 지표를 포함하는 그래프 그리기
-fig, axs = plt.subplots(2, 2, figsize=(14, 10))
+fig = px.line(financial_data, x='연도', y=['매출액 성장률 (%)', '영업이익 성장률 (%)', '당기순이익 성장률 (%)'],
+              title='카카오 주요 재무 지표 성장률', markers=True)
+fig.update_layout(yaxis_title='성장률 (%)')
+st.plotly_chart(fig)
 
-# 매출액 성장률
-axs[0, 0].plot(financial_data['연도'], financial_data['매출액 성장률 (%)'], marker='o', linestyle='-', color='b')
-axs[0, 0].set_title('매출액 성장률 (%)')
-axs[0, 0].set_xlabel('연도')
-axs[0, 0].set_ylabel('성장률 (%)')
-
-# 영업이익 성장률
-axs[0, 1].plot(financial_data['연도'], financial_data['영업이익 성장률 (%)'], marker='o', linestyle='-', color='g')
-axs[0, 1].set_title('영업이익 성장률 (%)')
-axs[0, 1].set_xlabel('연도')
-axs[0, 1].set_ylabel('성장률 (%)')
-
-# 당기순이익 성장률
-axs[1, 0].plot(financial_data['연도'], financial_data['당기순이익 성장률 (%)'], marker='o', linestyle='-', color='r')
-axs[1, 0].set_title('당기순이익 성장률 (%)')
-axs[1, 0].set_xlabel('연도')
-axs[1, 0].set_ylabel('성장률 (%)')
-
-# 자산총계, 부채총계, 자본총계
-axs[1, 1].plot(financial_data['연도'], financial_data['자산총계'], marker='o', linestyle='-', color='b', label='자산총계')
-axs[1, 1].plot(financial_data['연도'], financial_data['부채총계'], marker='o', linestyle='-', color='g', label='부채총계')
-axs[1, 1].plot(financial_data['연도'], financial_data['자본총계'], marker='o', linestyle='-', color='r', label='자본총계')
-axs[1, 1].set_title('자산총계, 부채총계, 자본총계')
-axs[1, 1].set_xlabel('연도')
-axs[1, 1].set_ylabel('백만원')
-axs[1, 1].legend()
-
-st.pyplot(fig)
+fig2 = px.line(financial_data, x='연도', y=['자산총계', '부채총계', '자본총계'],
+               title='카카오 자산, 부채 및 자본 총계', markers=True)
+fig2.update_layout(yaxis_title='백만원')
+st.plotly_chart(fig2)
 
 st.write('''위 그래프를 통해 카카오의 재무 성과를 분석한 결과, 다음과 같은 주요 내용을 확인할 수 있습니다:
 - **매출액 성장률**: 카카오는 매출액이 꾸준히 증가하고 있으며, 연도별 매출액 성장률도 긍정적인 추세를 보이고 있습니다.
