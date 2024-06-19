@@ -12,4 +12,4 @@
 
 ## 포트폴리오 웹사이트
 
-자세한 내용은 개인 홈페이지를 통해 확인해 주세요: [개인 포트폴리오]([https://appfile-l972rngx34tfwryvyztq8r.streamlit.app/#c8990eb1](http://localhost:8501/))
+자세한 내용은 개인 홈페이지를 통해 확인해 주세요: [개인 포트폴리오]([https://appfile-l972rngx34tfwryvyztq8r.streamlit.app/#c8990eb1])
